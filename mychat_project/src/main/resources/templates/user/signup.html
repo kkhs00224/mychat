@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <form th:action="@{/user/signup}" method="post" name="signup">
+        <div><label> 아이디 : <input type="text" name="username" required></label></div>
+        <div><label> 비밀번호 : <input type="password" name="password" required></label></div>
+        <div><label> 비밀번호 확인 : <input type="password" name="password2" required></label></div>
+        <button type="submit">가입하기</button>
+    </form>
+</body>
+<script>
+    let form = document.signup;
+    let pOne = form.password;
+    let pTwo = form.password2;
+    let check = document.createElement('div');
+
+
+    pOne.addEventListener("blur", ()=>{
+        if(pOne.value !== pTwo.value){
+            msg("비밀번호 불일치", "red");
+            pTwo.parentNode.parentNode.append(check);
+        }
+    })
+    pTwo.addEventListener("input", ()=>{
+        if(pOne.value === pTwo.value){
+            msg("비밀번호 일치", "blue");
+            pTwo.parentNode.parentNode.append(check);
+        }else{
+            msg("비밀번호 불일치", "red");
+        }
+    })
+    function msg(msg, color){
+        check.innerText = "";
+        check.append(msg)
+        check.style.color = color;
+    }
+
+</script>
+</html>

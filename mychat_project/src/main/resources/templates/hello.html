@@ -8,7 +8,10 @@
 <body> <!-- Thymeleaf 3.1은 더 이상 HttpServletRequest 액세스를 제공하지 않아 HttpServlet#getRemoveUser()를 사용할 수 없다. -->
     <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
     <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out">
+        <input type="submit" value="로그아웃">
+    </form>
+    <form th:action="@{/user/withdrawal}" method="post">
+        <input type="submit" value="회원탈퇴">
     </form>
 </body>
 </html>

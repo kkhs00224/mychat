@@ -5,9 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UsersVo, String> {
-    UsersVo getUsersVoByUsernameAndPassword(String username, String password);
+public interface UsersRepository extends JpaRepository<UsersVo, String> {
+
+    UsersVo findUsersVoByUsernameAndPassword(String username, String password);
 
     int deleteUsersVoByUsernameAndPassword(String username, String password);
+
+    UsersVo findUsersVoByUsername(String username);
 
 }

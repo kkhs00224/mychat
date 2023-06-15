@@ -1,21 +1,18 @@
 package com.example.mychat_project.vo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "authorities")
-public class AuthoritiesVo {
-    @Id
-    @Column
-    private String username;
-
-    @Id
-    @Column
-    private String authority;
+public class AuthoritiesVo implements Serializable {
+    @EmbeddedId
+    private AuthorityId authorityId;
 
 }
+
+// pk가 여러 개일 경우 Serialinable을 구현하고, @Embeddable을 통해 여러 아이디를 클래스로 만들고,  @EmbeddedID를 통해 가져온다.
+
