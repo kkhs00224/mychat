@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <th:block th:insert="~{layout/config :: config}"></th:block>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <th:block th:insert="~{layout/config :: config}"></th:block>
+    </head>
 <body>
-    <th:block th:insert="~{layout/header :: header}"></th:block>
-    <th:block layout:fragment="content"></th:block>
+<div class="flex fl-di-col justify-content-center">
+    <div style="background-color: lightgoldenrodyellow;text-align: center; height: 10vh;"></div>
+    <div class="flex" style="align-items: stretch; height: 90vh;">
+        <div style="background-color: lightpink; min-width: 200px; max-width: 200px" th:insert="~{layout/header :: header}"></div>
+        <div style="background-color: lightgreen;" class="w100"><div layout:fragment="content"></div></div>
+    </div>
+
+</div>
     <th:block th:insert="~{layout/footer :: footer }"></th:block>
 </body>
 </html>

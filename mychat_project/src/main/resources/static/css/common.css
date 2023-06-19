@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+.w90vh {
+    width: 90vh;
+}
+.w80vh{
+    width: 80vh;
+}
+.w20vh{
+    width: 20vh;
+}
+
+.flex {
+    display: flex;
+}
+.fl-di-col{
+    flex-direction: column;
+}
+.justify-content-center{
+    justify-content: center;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.header-form{
+    list-style: none;
+    padding: 0;
+}
+
+.a-1{
+    color: black;
+    text-decoration: none;
+}

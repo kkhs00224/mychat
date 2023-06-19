@@ -3,9 +3,7 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
-<head th:fragment="config">
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/css/layout.css">
-</head>
+<th:block th:fragment="config">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+</th:block>
 </html>

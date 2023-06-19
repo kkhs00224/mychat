@@ -4,7 +4,14 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
-    <div th:fragment="header" style="background-color: lightgoldenrodyellow;">
-        <span>header block</span>
+    <div th:fragment="header" style="margin: 0;padding: 0;">
+        <ul class="header-form">
+            <li>
+                <span th:remove="tag" sec:authorize="!isAuthenticated()"><a class="a-1" th:href="@{/login}">로그인/회원가입</a></span>
+                <span th:remove="tag" sec:authorize="isAuthenticated()" sec:authentication="name"></span>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 </html>
